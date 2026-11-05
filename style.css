@@ -1,5 +1,7 @@
 
-/* PENGATURAN DASAR */
+/* =========================
+   RESET
+========================= */
 * {
     margin: 0;
     padding: 0;
@@ -7,24 +9,32 @@
     scroll-behavior: smooth;
 }
 
+/* =========================
+   BODY
+========================= */
 body {
-    font-family: Arial, sans-serif;
-    background: #071629;
-    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f7fb;
+    color: #222;
+    line-height: 1.7;
 }
 
-/* HEADER */
+/* =========================
+   HEADER
+========================= */
 header {
-    background: #0c2039;
-    padding: 20px 7%;
+    background: #071952;
+    color: white;
+    padding: 20px 8%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    gap: 15px;
 }
 
 header h2 {
-    font-size: 23px;
+    font-size: 25px;
 }
 
 header h2 span {
@@ -34,6 +44,7 @@ header h2 span {
 nav {
     display: flex;
     gap: 25px;
+    flex-wrap: wrap;
 }
 
 nav a {
@@ -47,165 +58,267 @@ nav a:hover {
     color: #00d4ff;
 }
 
-/* HALAMAN UTAMA */
+/* =========================
+   BERANDA / HERO
+========================= */
 .hero {
-    min-height: 580px;
+    min-height: 550px;
+    padding: 70px 8%;
+    background: linear-gradient(135deg, #071952, #0b4f8a);
+    color: white;
+
     display: flex;
     align-items: center;
-    padding: 80px 7%;
-    background:
-        linear-gradient(90deg, #071629 20%, #071629cc 65%, #07162977),
-        url("https://images.unsplash.com/photo-1518770660439-4636190af475?w=1600")
-        center/cover;
+    justify-content: space-between;
+    gap: 40px;
 }
 
 .hero-content {
-    max-width: 700px;
+    max-width: 550px;
 }
 
-.hero h4 {
+.hero-content h4 {
     color: #00d4ff;
-    letter-spacing: 3px;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+.hero-content h1 {
+    font-size: 45px;
+    line-height: 1.2;
     margin-bottom: 20px;
 }
 
-.hero h1 {
-    font-size: clamp(35px, 5vw, 60px);
-    line-height: 1.2;
-    margin-bottom: 25px;
-}
-
-.hero p {
-    color: #c3d0df;
+.hero-content p {
     font-size: 17px;
-    line-height: 1.8;
     margin-bottom: 30px;
 }
 
+/* TOMBOL */
 .tombol {
     display: inline-block;
-    background: #00c8ef;
-    color: #071629;
-    padding: 15px 30px;
+    background: #00d4ff;
+    color: #071952;
+    padding: 12px 25px;
+    border-radius: 8px;
     text-decoration: none;
     font-weight: bold;
-    border-radius: 7px;
     transition: 0.3s;
 }
 
 .tombol:hover {
     background: white;
-    transform: translateY(-4px);
+    transform: translateY(-3px);
 }
 
-/* BAGIAN TENTANG */
-section:not(.hero) {
-    padding: 80px 7%;
+/* FOTO HERO */
+.hero-image {
+    width: 48%;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 20px;
+    border: 4px solid rgba(255,255,255,0.2);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* =========================
+   TENTANG TKJ
+========================= */
+.tentang {
+    padding: 80px 8%;
+    text-align: center;
+    background: white;
+}
+
+.tentang h2 {
+    color: #071952;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.tentang p {
+    max-width: 800px;
+    margin: auto;
+    font-size: 17px;
+}
+
+/* =========================
+   KEGIATAN
+========================= */
+.kegiatan {
+    padding: 80px 8%;
     text-align: center;
 }
 
-section h2 {
-    color: #00d4ff;
-    font-size: 30px;
-    margin-bottom: 25px;
+.kegiatan h2 {
+    font-size: 32px;
+    color: #071952;
 }
 
-#tentang p {
-    max-width: 800px;
-    margin: auto;
-    color: #c3d0df;
-    font-size: 17px;
-    line-height: 1.9;
+.subtitle {
+    margin-top: 10px;
+    margin-bottom: 40px;
+    color: #666;
 }
 
-/* KARTU KEGIATAN */
-#kegiatan {
-    background: #0c2039;
-}
-
+/* CARD */
 .cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 25px;
-    margin-top: 40px;
 }
 
 .card {
-    background: #142e4c;
-    padding: 35px 25px;
-    border: 1px solid #244765;
-    border-radius: 12px;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
     transition: 0.3s;
+    text-align: left;
 }
 
 .card:hover {
     transform: translateY(-8px);
-    border-color: #00d4ff;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
-.card h3 {
-    margin-bottom: 18px;
-    font-size: 20px;
+/* FOTO KEGIATAN */
+.card img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
 }
 
-.card p {
-    color: #c3d0df;
-    line-height: 1.7;
+/* ICON CARD */
+.icon-card {
+    height: 230px;
+    background: linear-gradient(135deg, #071952, #0b4f8a);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 80px;
 }
 
-/* KONTAK */
-#kontak {
-    background: linear-gradient(135deg, #075078, #087fae);
+/* ISI CARD */
+.card-content {
+    padding: 20px;
 }
 
-#kontak h2 {
+.card-content h3 {
+    color: #071952;
+    margin-bottom: 10px;
+}
+
+.card-content p {
+    color: #666;
+}
+
+/* =========================
+   KONTAK
+========================= */
+.kontak {
+    padding: 80px 8%;
+    text-align: center;
+    background: #071952;
     color: white;
 }
 
-#kontak p {
-    margin-top: 15px;
+.kontak h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
 }
 
-/* FOOTER */
+.kontak p {
+    margin-bottom: 25px;
+}
+
+/* =========================
+   FOOTER
+========================= */
 footer {
-    background: #040d18;
+    background: #03102e;
+    color: white;
     text-align: center;
-    padding: 25px;
-    color: #b8c8d8;
+    padding: 20px;
 }
 
-/* TAMPILAN HP */
-@media (max-width: 768px) {
+/* =========================
+   RESPONSIVE TABLET
+========================= */
+@media (max-width: 900px) {
 
     header {
         flex-direction: column;
-        gap: 20px;
+        text-align: center;
     }
 
     nav {
         justify-content: center;
-        flex-wrap: wrap;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: 35px;
+    }
+
+    .hero-image {
+        width: 100%;
+    }
+
+    .hero-image img {
+        height: 300px;
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+/* =========================
+   RESPONSIVE HP
+========================= */
+@media (max-width: 600px) {
+
+    header h2 {
+        font-size: 22px;
+    }
+
+    nav {
         gap: 15px;
     }
 
     nav a {
-        font-size: 13px;
+        font-size: 14px;
     }
 
-    .hero {
-        min-height: 500px;
-        padding: 60px 7%;
+    .hero-content h1 {
+        font-size: 28px;
     }
 
-    .hero h1 {
-        font-size: 37px;
+    .hero-image img {
+        height: 230px;
     }
 
     .cards {
         grid-template-columns: 1fr;
     }
 
-    section h2 {
+    .tentang h2,
+    .kegiatan h2 {
         font-size: 25px;
     }
+
+    .kontak h2 {
+        font-size: 24px;
+    }
+
 }
